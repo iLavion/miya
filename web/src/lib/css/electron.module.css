@@ -1,0 +1,52 @@
+
+.electronNavigation {
+    position: sticky;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    text-align: center;
+    align-items: center;
+    height: 32px;
+    z-index: 9999;
+}
+
+.electronLogo {
+    margin-left: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.electronLogo img {
+    height: 16px;
+}
+
+.electronDragSpace {
+    flex-grow: 1;
+    display: flex;
+    pointer-events: none;
+    height: 100%;
+}
+.electronButton {
+    background-color: var(--Quantum0);
+    padding: 6px 12px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.electronMinimize {
+    border-radius: 0 0 0 6px
+}
+
+.electronMinimize:hover,
+.electronMaximize:hover {
+    background-color: var(--Quantum1_2);
+    border-radius: 0;
+}
+
+.electronClose:hover {
+    background: red;
+}

@@ -1,0 +1,76 @@
+{
+  "name": "miya",
+  "version": "0.3.1",
+  "main": "electron/index.js",
+  "build": {
+    "appId": "com.cuties.miya",
+    "productName": "Miya",
+    "asar": true,
+    "files": [
+      "build/**/*",
+      "node_modules/**/*",
+      "electron/**/*",
+      "web/dist/**/*",
+      "api/dist/**/*"
+    ],
+    "win": {
+      "target": "squirrel",
+      "icon": "icons/miya.ico",
+      "defaultArch": "x64"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "icons/miya.png"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "icons/miya.png"
+    },
+    "squirrelWindows": {
+      "artifactName": "MiyaSetup-${version}.${ext}",
+      "iconUrl": "https://i.imgur.com/0lUnjPl.png"
+    },
+    "directories": {
+      "output": "build"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "iLavion",
+        "repo": "miya"
+      }
+    ]
+  },
+  "dependencies": {
+    "@electron/asar": "^3.2.13",
+    "axios": "^1.7.7",
+    "electron-log": "^5.2.0",
+    "electron-squirrel-startup": "^1.0.1",
+    "electron-updater": "^6.3.4",
+    "webtorrent": "^2.5.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^32.1.0",
+    "electron-builder": "^25.0.5",
+    "nodemon": "^3.1.4"
+  },
+  "scripts": {
+    "prepack": "echo Building Miya... && dir build",
+    "dev": "npm run dev-electron",
+    "prod": "npm run build && npm run start-prod",
+    "dev-electron": "cross-env NODE_ENV=development nodemon --watch ./electron/index.js --watch ./electron/src/**/*.js --ignore ./electron/node_modules --exec \"npx electron ./electron/index.js\"",
+    "build": "npm run build-react && npm run build-api && npm run build-electron",
+    "build-react": "cd web && npm run build",
+    "build-api": "cd api && npm run build",
+    "build-electron": "cross-env NODE_ENV=production electron-builder",
+    "start-prod": "electron dist/miya-win32-x64/miya.exe"
+  },
+  "keywords": [],
+  "author": "Miya",
+  "license": "ISC",
+  "description": "Miya"
+}

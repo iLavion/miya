@@ -1,0 +1,63 @@
+:root {
+    --Gray1: #444;
+    --Quantum0: #13131b;
+    --Quantum0_1: #0d0d13;
+    --Quantum1: #13121e;
+    --Quantum2: #f2285b;
+    --Quantum3: #5b192f;
+    --Quantum4: #331624;
+    --Quantum5: #bebdc1;
+    --Quantum1_1: #1e1d30;
+    --Quantum1_2: #323050;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #13131b;
+    color: #fff;
+    font-family: Nunito;
+    box-sizing: border-box;
+}
+
+.drag {
+    -webkit-app-region: drag;
+}
+
+.nodrag {
+    -webkit-app-region: no-drag;
+}
+
+.custom-dots {
+    bottom: 12px !important;
+    left: -40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-dots li {
+    margin: 0;
+}
+
+.custom-dots li button:before {
+    font-size: 8px;
+    gap: 4px;
+    color: var(--Quantum1_2); 
+    opacity: 1;
+}
+
+/* Active dot */
+.custom-dots li.slick-active button:before {
+    color: var(--Quantum2);
+}
+
+@media (max-width: 1200px) {
+    .custom-dots {
+        left: -35%;
+    }
+}

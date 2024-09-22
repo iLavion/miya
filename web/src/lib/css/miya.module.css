@@ -1,0 +1,486 @@
+/*
+*   Official Miya CSS
+*/
+
+/*
+*
+*    Main Application
+*
+*/
+
+.myApp {
+    background-color: var(--Quantum0);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-family: Nunito;
+}
+
+.myContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.myWebNav {
+    display: flex;
+    flex-direction: row;
+    height: 48px;
+    gap: 16px;
+    padding: 4px 8px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.myWebNavLogo {
+    height: 24px;
+    margin: 0 4px;
+    object-fit: cover;
+}
+
+.myWebNavSearch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #f1f1f1; /* Light grey background */
+    padding: 5px;
+    max-width: 400px; /* Adjust width as needed */
+    margin: 0 auto; /* Center the search bar */
+}
+
+.myWebNavSearchInput {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none; /* Remove default focus outline */
+}
+
+.myWebNavSearchIcon {
+    background-color: #007bff; /* Button color */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 5px; /* Space between input and button */
+    display: flex;
+    align-items: center;
+}
+
+.myWebNavSearchButton:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/*
+*
+*    Anime Carousel
+*
+*/
+
+.mySliderContainer1 {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.mySliderContainer2 {
+    width: 90%;
+}
+
+.myAnimeTopContainer {
+    position: relative;
+    display: flex!important;
+    flex-direction: row;
+    justify-content: center;
+    height: 500px;
+}
+
+.myAnimeTopCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--Quantum1);
+    padding: 10px;
+    /*border-radius: 8px 0 0 8px;*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    color: #fff;
+    width: 30%;
+    z-index: 556;
+}
+
+.myAnimeTopImageWrapper {
+    position: relative;
+    display: flex;
+    width: 70%;
+    /*border-radius: 0 4px 4px 0;*/
+    height: 100%;
+    overflow: hidden;
+}
+
+.myAnimeTopImageWrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0) 30%, var(--Quantum1) 100%),
+                linear-gradient(to top, rgba(0, 0, 0, 0) 90%, var(--Quantum1) 100%),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0) 90%, var(--Quantum1) 100%),
+                linear-gradient(to right, rgba(0, 0, 0, 0) 80%, var(--Quantum1) 100%);
+    pointer-events: none;
+    z-index: 556;
+}
+
+.myAnimeTopImage {
+    position: relative;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    z-index: 555;
+}
+
+.myAnimeTopInfoCard {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 25%;
+    left: 3%;
+    z-index: 557;
+    width: 600px;
+}
+
+.myAnimeTopTitle {
+    display: flex;
+    font-size: 36px;
+    color: var(--Quantum2);
+    font-weight: bold;
+    margin: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+}
+
+.myAnimeTopAltTitle {
+    display: flex;
+    font-size: 17px;
+    color: var(--Quantum2);
+    font-weight: normal;
+    margin: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.myAnimeTopDescription {
+    width: 420px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+}
+
+.myAnimeTopPlayButtonContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    text-decoration: none;
+}
+
+.myAnimeTopPlayButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    background-color: var(--Quantum1_1);
+    border: 2px solid var(--Quantum1_1);
+    padding: 4px 12px 4px 6px;
+    border-radius: 2px;
+    transition: 0.25s border ease;
+    font-weight: 400;
+}
+
+.myAnimeTopPlayButton:hover {
+    border: 2px solid var(--Quantum1_2);
+    background-color: var(--Quantum1_2);
+}
+
+
+/*
+*
+*    Anime Main
+*
+*/
+
+.myAnimeContainer {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.myAnimeCategoryContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.myAnimeMainContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 0 48px;
+    box-sizing: border-box;
+}
+
+.myAnimeMainLeft {
+    display: flex;
+    flex-direction: column;
+}
+
+.myAnimeMainRight {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    width: auto;
+}
+
+.myAnimeCardTitleContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 3.75rem;
+    overflow: hidden;
+}
+
+.myAnimeCardTitle {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    color: #aaa;
+    font-weight: 500;
+    font-size: 1.0rem;
+    line-height: 1.5rem;
+    height: 3rem;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+.myAnimeCardTitle,
+.myAnimeCardReleaseDate,
+.myAnimeCardScore {
+    margin: 0;
+}
+
+.myAnimeCardContent {
+    text-align: center;
+}
+
+.myAnimeTitle {
+    margin: 10px 0 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.myAnimeDescription {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #ccc;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.myPlayButton {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #e74c3c;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.myAnimeImage {
+    width: 100%;
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.myAnimeCardImageContainer {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+    height: auto;
+    aspect-ratio: 16 / 24;
+}
+
+.myAnimeCardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px 8px 0 0;
+}
+
+.myAnimeCardImage::after {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0) 30%, var(--Quantum1) 100%),
+                linear-gradient(to top, rgba(0, 0, 0, 0) 90%, var(--Quantum1) 100%),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0) 90%, var(--Quantum1) 100%),
+                linear-gradient(to right, rgba(0, 0, 0, 0) 80%, var(--Quantum1) 100%);
+}
+
+.myAnimeMainCardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1350px;
+    margin: 0 auto;
+}
+
+.myAnimeCard {
+    flex: 0 1 calc(16.66% - 10px);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+    color: #fff;
+    box-sizing: border-box;
+    min-height: 200px;
+}
+
+.myAnimeTitleGrid {
+    margin: 10px 0 5px 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+.myAnimeScore {
+    font-size: 14px;
+    color: #555;
+}
+
+.myAnimeOtherContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.myAnimeOtherMainContainer {
+    display: flex;
+    flex-direction: row;
+    max-width: 1125px;
+}
+
+.myAnimeOtherList {
+    display: flex;
+    flex-direction: column;
+}
+
+.myAnimePopularContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.myAnimePopularContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+
+.myAnimePopularCardContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.myAnimePopularCard {
+    display: flex;
+    align-items: center;
+    border-right: 2px solid var(--Quantum2);
+    border-radius: 5px;
+    background-color: var(--Quantum1_1);
+    width: 350px;
+    height: 80px;
+}
+
+.myAnimePopularNumber {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.myAnimePopularImageContainer {
+    height: 80px;
+    aspect-ratio: 16 / 24; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.myAnimePopularImage {
+    width: 100%; /* Make the image fill the container width */
+    height: auto; /* Maintain the aspect ratio */
+    max-height: 100%; /* Prevent overflow */
+    object-fit: cover; /* Cover the entire container without stretching */
+    border-radius: 5px; /* Optional: Keep the rounded corners */
+}
+
+
+.myAnimePopularInfoContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.myAnimePopularTitleContainer {
+    margin-bottom: 5px;
+}
+
+.myAnimePopularTitle {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.myAnimePopularCreatedAt {
+    font-size: 0.9rem;
+    color: #666;
+}

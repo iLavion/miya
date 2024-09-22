@@ -1,0 +1,23 @@
+# Remove API files
+/api/cache
+/api/dist
+/api/node_modules
+
+# Remove React files
+/web/node_modules
+/web/dist
+
+# Remove reference folder
+/ref
+
+# Remove build files
+/build/squirrel-windows
+/build/win-unpacked
+/build/builder-debug.yml
+/build/builder-effective-config.yaml
+
+# Remove electron files
+/electron/node_modules
+
+# Remove global files
+node_modules
