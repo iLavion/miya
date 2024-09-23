@@ -35,6 +35,12 @@ function createWindow() {
         mainWindow.webContents.send('window-state', 'normal');
     });
 
+    // Minimize event
+    mainWindow.on('minimize', () => {
+        isMaximized = false;
+        mainWindow.webContents.send('window-minimized');
+    });
+
     // Resize event
     mainWindow.on('resize', () => {
         const isCurrentlyMaximized = mainWindow.isMaximized();

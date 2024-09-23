@@ -10,15 +10,14 @@ export default function Navigation() {
     const [isMaximized, setIsMaximized] = useState(false);
     const [hoverClose, setHoverClose] = useState(false);
     const [hoverMax, setHoverMax] = useState(false);
-    const [hoverMin, setHoverMin] = useState(false)
+    const [hoverMin, setHoverMin] = useState(false);
     const size = 20;
 
     useEffect(() => {
         const fetchWindowState = async () => {
             try {
                 const state = await windowStateElectron();
-                //console.log('Window state:', state);
-                setIsMaximized(state === 'maximized')
+                setIsMaximized(state === 'maximized');
             } catch (error) {
                 console.error('Failed to fetch window state:', error);
             }
@@ -26,12 +25,25 @@ export default function Navigation() {
 
         fetchWindowState();
 
+        const handleWindowState = (state) => {
+            setIsMaximized(state === 'maximized');
+        };
+
+        const handleWindowMinimized = () => {
+            setIsMaximized(false);
+        };
+
         if (window.electronAPI) {
-            window.electronAPI.on('window-state', (state) => {
-                //console.log('Window state:', state);
-                setIsMaximized(state === 'maximized');
-            });
+            window.electronAPI.on('window-state', handleWindowState);
+            window.electronAPI.on('window-minimized', handleWindowMinimized);
         }
+
+        return () => {
+            if (window.electronAPI) {
+                window.electronAPI.off('window-state', handleWindowState);
+                window.electronAPI.off('window-minimized', handleWindowMinimized);
+            }
+        };
     }, []);
 
     return (

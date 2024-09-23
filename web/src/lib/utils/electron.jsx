@@ -33,20 +33,13 @@ const checkWindowState = async () => {
     } else {
         console.error('Not running in Electron: Cannot check window state.');
     }
-};
-
-let isMaximized = false;
-
-const updateWindowState = (state) => {
-    isMaximized = state === 'maximized';
+    return null;
 };
 
 export const minElectron = () => sendMessage('minimize-window');
-
 export const maxElectron = async () => {
     try {
         const state = await checkWindowState();
-        updateWindowState(state);
         const command = state === 'maximized' ? 'restore-window' : 'maximize-window';
         sendMessage(command);
     } catch (error) {
@@ -55,12 +48,10 @@ export const maxElectron = async () => {
 };
 
 export const closeElectron = () => sendMessage('close-window');
-
 export const windowStateElectron = async () => {
     try {
         const state = await checkWindowState();
-        updateWindowState(state);
-        return state;
+        return state; // Directly return the state
     } catch (error) {
         console.error(error);
     }
